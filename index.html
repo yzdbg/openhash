@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OpenHash</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://use.fontawesome.com/020f0ef93b.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.min.css">
+  <script src="js/dashboard.js"></script>
+</head>
+<body>
+  <i id="leave" class="material-icons">clear</i>
+  <i id="minimize" class="material-icons">remove</i>
+  <div  id="main-panel">
+    <div class="window" id="hashrate-window">
+      <div id="chart">
+        <canvas id="hashrate-graph"></canvas>
+      </div>
+      <div id="hashrate-earnings">
+        <div id="earnings-data">
+          <h3>31337 H/s</h3>
+          <span>Total hashrate</span>
+        </div>
+        <div id="hashrate-data">
+          <h3>$ 31.337</h3>
+          <span>Daily estimated earnings</span>
+        </div>
+      </div>
+    </div>
+    <div id="workers-window">
+      <div class="window worker table">
+        <div class="worker-info">
+          <div class="worker-name ">
+            <div class="name">
+              Rig name
+            </div>
+            <div class="worker-status">
+
+            </div>
+          </div>
+
+          <div class="worker-hashrate ">
+            Hashrate
+          </div>
+          <div class="worker-algorithm ">
+            Algorithm
+          </div>
+          <div class="worker-uptime ">
+            uptime
+          </div>
+          <div class="worker-earnings ">
+            Daily estimated
+          </div>
+        </div>
+      </div>
+      <div class="window worker" id="worker1">
+        <div class="worker-state worker-active">
+        </div>
+        <div class="worker-info">
+          <div class="worker-name border-right">
+            <div class="name">
+              RX580 RIG
+            </div>
+            <div class="worker-status">
+              OK
+            </div>
+          </div>
+
+          <div class="worker-hashrate border-right">
+            254.32 MH/s
+          </div>
+          <div class="worker-algorithm border-right">
+            Ethash
+          </div>
+          <div class="worker-uptime border-right">
+            7 Hours 24 min
+          </div>
+          <div class="worker-earnings ">
+            $ 12.32/day
+          </div>
+        </div>
+        <div class="expand-button" >
+          <i class="material-icons">keyboard_arrow_down</i>
+        </div>
+      </div>
+
+
+        <div class="window worker" id="worker3">
+          <div class="worker-state worker-active"></div>
+          <div class="worker-info">
+            <div class="worker-name border-right">
+              <div class="name">
+                NVIDIA RIG
+              </div>
+              <div class="worker-status">
+                OK
+              </div>
+            </div>
+
+            <div class="worker-hashrate border-right">
+              3541.32 H/s
+            </div>
+            <div class="worker-algorithm border-right">
+              Lyra2Rev2
+            </div>
+            <div class="worker-uptime border-right">
+
+            3 Hours 24 min
+            </div>
+            <div class="worker-earnings ">
+              $ 26.82/day
+            </div>
+            <div class="expand-button">
+              <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+          </div>
+        </div>
+        <div class="window worker" id="worker2">
+          <div class="worker-state worker-inactive">
+          </div>
+          <div class="worker-info">
+            <div class="worker-name border-right">
+              <div class="name">
+                MONERO MINER
+              </div>
+              <div class="worker-status">
+                DOWN
+              </div>
+            </div>
+
+            <div class="worker-hashrate border-right">
+              NA
+            </div>
+            <div class="worker-algorithm border-right">
+              NA
+            </div>
+            <div class="worker-uptime border-right">
+              NA
+            </div>
+            <div class="worker-earnings ">
+              NA
+            </div>
+            <div class="expand-button" >
+              <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div  id="sidebar">
+      <ul>
+        <li class="menu">  </li>
+ 
+        <li class="menu selected"id="home"><i class="material-icons">home</i></li>
+        <li class="menu"><i class="material-icons">assessment</i></li>
+        <li class="menu"><i class="material-icons">account_balance_wallet</i></li>
+        <li class="menu" id="settings"><i class="material-icons">settings</i></li>
+
+      </ul>
+    </div>
+    <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+    </script>
+  </body>
+  </html>
